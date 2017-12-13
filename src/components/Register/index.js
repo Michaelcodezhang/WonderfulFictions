@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Card, Form, Input, Icon, Button } from 'antd'
-import {routerRedux} from 'dva/router'
-import {connect} from 'dva'
+import { Card, Form, Input, Icon, Button, message } from 'antd'
+import { routerRedux } from 'dva/router'
+import { connect } from 'dva'
 import './index.less'
 
 const FormItem = Form.Item
@@ -19,6 +19,7 @@ class Register extends Component {
       if (!err) {
         console.log(value)
         this.props.dispatch(routerRedux.push('/register/success'))
+        message.info('注册成功，正在跳转...', 1)
       }
     })
   }

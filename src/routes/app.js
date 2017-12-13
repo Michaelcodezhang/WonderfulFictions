@@ -25,7 +25,7 @@ const AppRouter = (props) => {
         <Route path='/author/:name' component={AuthorPage}/>
         <Route path='/page2' component={Page2} />
         <Route path='/page3' component={Page3} />
-        <Route path='/register' component={Register}/>
+        <Route exact path='/register' component={Register}/>
         <Route path='/register/success' component={RegisterSuccess}/>
         <Route path='/404' component={NotFound} />
         <Redirect from='*' to='/home' />
