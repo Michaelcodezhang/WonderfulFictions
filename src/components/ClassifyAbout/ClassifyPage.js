@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Table } from 'antd'
 import { Link } from 'dva/router'
-import dataJson from '../../../sources/articleLists/data.json'
+import dataJson from '../../sources/articleLists/data.json'
 
 const columns = [{
   title: '文章标题',
@@ -28,14 +28,22 @@ const columns = [{
   key: 'updatedTime'
 }]
 
-class Articles extends Component {
+class ClassifyPage extends Component {
+  componentDidMount () {
+    // console.log(this.props.match.params.id)
+  }
+
   render () {
+    const type = this.props.match.params.id
+    const datas = dataJson.filter((data) => {
+      return (data.type === type)
+    })
     return (
       <div>
-        <Table columns={columns} dataSource={dataJson} />
+        <Table columns={columns} dataSource={datas} />
       </div>
     )
   }
 }
 
-export default Articles
+export default ClassifyPage

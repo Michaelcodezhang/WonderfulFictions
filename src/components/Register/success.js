@@ -9,7 +9,6 @@ class RegisterSuccess extends Component {
       this.props.dispatch(routerRedux.push('/home'))
     }, 1000)
   }
-
   render () {
     return (
       <div className='register-container' style={{height: '598px'}} />

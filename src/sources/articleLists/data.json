@@ -1,67 +1,33 @@
 [{
     "key": "1",
+    "type":"fiction",
+    "type-ch":"小说",
     "title": "雨城",
-    "author": "Michael Code",
+    "author": "MichaelCode",
     "updatedTime": "2017-12-06"
   },
   {
     "key": "2",
-    "title": "雨城",
-    "author": "Michael Code",
+    "type":"fiction",
+    "type-ch":"小说",
+    "title": "蟑螂",
+    "author": "MichaelCode",
     "updatedTime": "2017-12-06"
   },
   {
     "key": "3",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
+    "type":"prose",
+    "type-ch":"散文",
+    "title": "灵魂只能独行",
+    "author": "周国平",
+    "updatedTime": "2009-12-06"
   },
   {
     "key": "4",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
-  },
-  {
-    "key": "5",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
-  },
-  {
-    "key": "6",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
-  },
-  {
-    "key": "7",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
-  },
-  {
-    "key": "8",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
-  },
-  {
-    "key": "9",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
-  },
-  {
-    "key": "10",
-    "title": "雨城",
-    "author": "Michael Code",
-    "updatedTime": "2017-12-06"
-  },
-  {
-    "key": "11",
-    "title": "雨城",
-    "author": "Michael Code",
+    "type":"fiction",
+    "type-ch":"小说",
+    "title": "无名",
+    "author": "接Q侠",
     "updatedTime": "2017-12-06"
   }
 ]

@@ -52,7 +52,7 @@ class Login extends Component {
         </ButtonGroup>
         <Modal
           title='竹林茶香-登录'
-          width='400px'
+          width='30%'
           visible={this.state.visible}
           footer={null}
           onCancel={this.handleCancel}

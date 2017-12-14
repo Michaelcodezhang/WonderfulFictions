@@ -29,7 +29,7 @@ class LayoutContent extends Component {
             <Link to='/articleList'>文章列表</Link>
           </MenuItem>
           <MenuItem className='app-menu-item'>
-            <Link to='/page2'>分类</Link>
+            <Link to='/classify'>分类</Link>
           </MenuItem>
           <MenuItem className='app-menu-item'>
             <Link to='/page3'>竹林</Link>
@@ -40,7 +40,7 @@ class LayoutContent extends Component {
             {this.props.children}
           </Card>
         </Content>
-        <Footer>
+        <Footer className='app-footer'>
           竹林茶香@2017
           &nbsp;&nbsp;
           By&nbsp; MichaelCode

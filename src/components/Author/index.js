@@ -22,6 +22,10 @@ const columns = [{
     )
   }
 }, {
+  title: '类型',
+  dataIndex: 'type-ch',
+  key: 'type-ch'
+}, {
   title: '更新时间',
   dataIndex: 'updatedTime',
   key: 'updatedTime'
