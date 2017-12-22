@@ -1,0 +1,14 @@
+{
+  "test1": {
+    "name": "MichaelCode",
+    "nameCh": "麦克马",
+    "headSculpture": "http://ww2.sinaimg.cn/large/0060lm7Tly1flwq55cwv6j30xc0xcabo.jpg",
+    "introduction": "我是一个喜欢读小说的程序员"
+  },
+  "test2": {
+    "name": "zhouguoping",
+    "nameCh": "周国平",
+    "headSculpture": "http://ww1.sinaimg.cn/large/0060lm7Tly1fmnjbm4fixj30aw0awdfz.jpg",
+    "introduction": "周国平，中国社会科学院哲学研究所研究员，中国当代著名学者、作家、哲学研究者，是中国研究哲学家尼采的著名学者之一。1945年生于上海，1967年毕业于北京大学哲学系，1981年毕业于中国社会科学院研究生院哲学系。"
+  }
+}

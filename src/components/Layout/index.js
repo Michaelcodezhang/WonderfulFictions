@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import { Link } from 'dva/router'
 import { Layout, Menu, Card } from 'antd'
-import Login from '../LoginAbout/index'
+import Login from '../../routes/LoginAbout/index'
 import './index.less'
 
 const {Header, Footer, Content} = Layout
@@ -18,7 +18,7 @@ class LayoutContent extends Component {
           <div className='app-header-title-left' />
           <div className='app-header-title'>竹林茶香</div>
           <div className='app-header-title-right'>
-            <Login/>
+            <Login />
           </div>
         </Header>
         <Menu className='app-menu' mode='horizontal'>

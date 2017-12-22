@@ -1,16 +1,16 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'dva/router'
-import HomePage from '../components/HomePage/index'
+import HomePage from './HomePage/index'
 import NotFound from './404'
 import Layout from '../components/Layout/index'
-import ArticleList from '../components/Articles/ArticleList/index'
-import Page3 from '../components/Page3/index'
-import Register from '../components/Register/index'
-import ArticlePage from '../components/Articles/ArticlePage/index'
-import AuthorPage from '../components/Author/index'
-import RegisterSuccess from '../components/Register/success'
-import Classify from '../components/ClassifyAbout/index'
-import ClassifyPage from '../components/ClassifyAbout/ClassifyPage'
+import ArticleList from './Articles/ArticleList/index'
+import Page3 from './Page3/index'
+import Register from './Register/index'
+import ArticlePage from './Articles/ArticlePage/index'
+import AuthorPage from './Author/index'
+import RegisterSuccess from './Register/success'
+import Classify from './ClassifyAbout/index'
+import ClassifyPage from './ClassifyAbout/ClassifyPage'
 
 const AppRouter = (props) => {
   return (
@@ -19,7 +19,7 @@ const AppRouter = (props) => {
         <Route exact path='/' component={HomePage} />
         <Route path='/home' component={HomePage} />
         <Route path='/articleList' component={ArticleList} />
-        <Route exact path='/article' component={ArticlePage} />
+        <Route path='/article/:id' component={ArticlePage} />
         <Route path='/author/:name' component={AuthorPage} />
         <Route exact path='/classify' component={Classify} />
         <Route path='/classify/:id' component={ClassifyPage} />

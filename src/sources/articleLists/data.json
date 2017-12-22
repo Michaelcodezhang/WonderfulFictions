@@ -1,33 +1,46 @@
-[{
-    "key": "1",
-    "type":"fiction",
-    "type-ch":"小说",
+[
+  {
+    "key": "1001",
+    "preKey": "null",
+    "nextKey": "1002",
+    "type": "fiction",
+    "typeCh": "小说",
     "title": "雨城",
     "author": "MichaelCode",
+    "authorCh":"麦克马",
     "updatedTime": "2017-12-06"
   },
   {
-    "key": "2",
-    "type":"fiction",
-    "type-ch":"小说",
+    "key": "1002",
+    "preKey": "1001",
+    "nextKey": "1003",
+    "type": "fiction",
+    "typeCh": "小说",
     "title": "蟑螂",
     "author": "MichaelCode",
+    "authorCh":"麦克马",
     "updatedTime": "2017-12-06"
   },
   {
-    "key": "3",
-    "type":"prose",
-    "type-ch":"散文",
+    "key": "1003",
+    "preKey": "1002",
+    "nextKey": "null",
+    "type": "prose",
+    "typeCh": "散文",
     "title": "灵魂只能独行",
-    "author": "周国平",
+    "author": "zhouguoping",
+    "authorCh": "周国平",
     "updatedTime": "2009-12-06"
   },
   {
-    "key": "4",
-    "type":"fiction",
-    "type-ch":"小说",
+    "key": "1004",
+    "preKey": "1003",
+    "nextKey": "1005",
+    "type": "fiction",
+    "typeCh": "小说",
     "title": "无名",
-    "author": "接Q侠",
+    "author": "Q-man",
+    "authorCh": "接Q侠",
     "updatedTime": "2017-12-06"
   }
 ]

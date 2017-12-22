@@ -7,11 +7,16 @@ const columns = [{
   title: '文章标题',
   dataIndex: 'title',
   key: 'title',
-  render: text => <Link to='/article'>{text}</Link>
+  render: (text, record) => {
+    const articleLink = '/article/' + record.key
+    return (
+      <Link to={articleLink}>{text}</Link>
+    )
+  }
 }, {
   title: '作者',
-  dataIndex: 'author',
-  key: 'author',
+  dataIndex: 'authorCh',
+  key: 'authorCh',
   render: (text, record) => {
     const authorLink = '/author/' + record.author
     return (
@@ -20,8 +25,8 @@ const columns = [{
   }
 }, {
   title: '类型',
-  dataIndex: 'type-ch',
-  key: 'type-ch'
+  dataIndex: 'typeCh',
+  key: 'typeCh'
 }, {
   title: '更新时间',
   dataIndex: 'updatedTime',
