@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Button, Form, Modal, Icon, Input } from 'antd'
+import { Button, Form, Modal, Icon, Input, message } from 'antd'
 import { Link } from 'dva/router'
+import { connect } from 'dva'
+import { login } from '../../utils/api'
 import './index.less'
 
 const ButtonGroup = Button.Group
@@ -16,6 +18,7 @@ class Login extends Component {
     this.showModal = this.showModal.bind(this)
     this.handleCancel = this.handleCancel.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.asyncLogin = this.asyncLogin.bind(this)
   }
 
   showModal () {
@@ -30,14 +33,38 @@ class Login extends Component {
     })
   }
 
+  asyncLogin = async function (values) {
+    const data = await this.props.dispatch({
+      type: 'app/login',
+      payload: {
+        name: values.userName,
+        password: values.password
+      }
+    })
+    if (data.code === 0) {
+      message.success('登录成功')
+      localStorage.setItem("userData",JSON.stringify({
+        userName: values.userName,
+        password: values.password
+      }))
+    } else if (data.code === 1001) {
+      message.error('不存在该用户！')
+    } else if (data.code === 1002) {
+      message.error('密码错误！')
+    } else {
+      message.warning('未知错误')
+    }
+    this.props.dispatch({type: 'app/isLogin', userData:data.data})
+  }
+
   handleSubmit (e) {
     e.preventDefault()
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values)
         this.setState({
           visible: false
         })
+        this.asyncLogin(values)
       }
     })
   }
@@ -78,4 +105,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default connect(({app}) => ({app}))(Login)

@@ -1,6 +1,11 @@
+import fetchPost from '../utils/request'
+import { login } from '../utils/api'
+
 export default {
   namespace: 'app',
   state: {
+    userName: '',
+    authority: 0,
     authorInfo: {
       name: '',
       headSculpture: '',
@@ -14,13 +19,22 @@ export default {
       'author': '',
       'updatedTime': '',
       'content': ''
-    }
+    },
+    isLogin: false
   },
   subscriptions: {},
-  effects: {},
+  effects: {
+    * login ({payload}) {
+      const data = yield fetchPost({
+        url: login,
+        method: 'post',
+        data: payload
+      })
+      return data
+    }
+  },
   reducers: {
     loginAuthorPage (state, payload) {
-      console.log(payload)
       return {
         ...state,
         authorInfo: payload.authorInfo
@@ -30,6 +44,21 @@ export default {
       return {
         ...state,
         article: payload.article
+      }
+    },
+    isLogin (state, payload) {
+      const {userName, authority} = payload.userData
+      return {
+        ...state,
+        isLogin: true,
+        userName: userName,
+        authority: authority
+      }
+    },
+    logout (state, payload) {
+      return {
+        ...state,
+        isLogin: false
       }
     }
   }

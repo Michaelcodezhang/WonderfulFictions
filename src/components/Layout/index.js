@@ -2,8 +2,9 @@
  * Created by out_xu on 17/7/13.
  */
 import React, { Component } from 'react'
+import { connect } from 'dva'
 import { Link } from 'dva/router'
-import { Layout, Menu, Card } from 'antd'
+import { Layout, Menu, Card, message } from 'antd'
 import Login from '../../routes/LoginAbout/index'
 import './index.less'
 
@@ -11,14 +12,57 @@ const {Header, Footer, Content} = Layout
 const MenuItem = Menu.Item
 
 class LayoutContent extends Component {
+  constructor () {
+    super()
+    this.handleLogout = this.handleLogout.bind(this)
+    this.asyncLogin = this.asyncLogin.bind(this)
+  }
+
+  componentWillMount () {
+    const userData = JSON.parse(localStorage.getItem('userData'))
+    if(userData){
+      this.asyncLogin(userData)
+    }
+  }
+
+  asyncLogin = async function (values) {
+    const data = await this.props.dispatch({
+      type: 'app/login',
+      payload: {
+        name: values.userName,
+        password: values.password
+      }
+    })
+    this.props.dispatch({type: 'app/isLogin', userData:data.data})
+  }
+
+  handleLogout () {
+    message.info('已退出登录')
+    this.props.dispatch({type: 'app/logout'})
+    localStorage.removeItem('userData')
+  }
+
   render () {
+    const {isLogin, userName} = this.props.app
     return (
       <Layout className='app'>
         <Header className='app-header'>
           <div className='app-header-title-left' />
           <div className='app-header-title'>竹林茶香</div>
           <div className='app-header-title-right'>
-            <Login />
+            {
+              isLogin ? (
+                <div className='isLogin'>
+                  {userName},已登录
+                  <ul className='isLogin-ul'>
+                    <li className='isLogin-ul-li'>后台管理</li>
+                    <li className='isLogin-ul-li' onClick={this.handleLogout}>退出登录</li>
+                  </ul>
+                </div>
+              ) : (
+                <Login />
+              )
+            }
           </div>
         </Header>
         <Menu className='app-menu' mode='horizontal'>
@@ -50,4 +94,4 @@ class LayoutContent extends Component {
   }
 }
 
-export default LayoutContent
+export default connect(({app}) => ({app}))(LayoutContent)
