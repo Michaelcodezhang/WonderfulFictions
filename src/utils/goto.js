@@ -1,4 +1,4 @@
-import { routerRedux } from 'dva/router'
+import { routerRedux } from 'dva-react-router-3/router'
 
 export default (path) => {
   if (path) {

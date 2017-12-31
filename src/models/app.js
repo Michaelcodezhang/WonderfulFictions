@@ -1,5 +1,5 @@
 import fetchPost from '../utils/request'
-import { login } from '../utils/api'
+import API from '../api/index'
 
 export default {
   namespace: 'app',
@@ -26,7 +26,15 @@ export default {
   effects: {
     * login ({payload}) {
       const data = yield fetchPost({
-        url: login,
+        url: API.login,
+        method: 'post',
+        data: payload
+      })
+      return data
+    },
+    * register ({payload}) {
+      const data = yield fetchPost({
+        url: API.register,
         method: 'post',
         data: payload
       })

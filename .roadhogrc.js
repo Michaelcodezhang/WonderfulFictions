@@ -12,6 +12,7 @@ export default {
         'transform-decorators-legacy',
         ["module-resolver", {
           "alias": {
+            "dva": "dva-react-router-3",
             "components": "./src/components",
             "config": "./src/config",
             "images": "./src/images",
@@ -21,7 +22,7 @@ export default {
             "utils": "./src/utils"
           }
         }],
-        ["import",{"libraryName":"antd","style":true}]
+        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
       ]
     },
     'production': {
@@ -30,6 +31,7 @@ export default {
         'transform-decorators-legacy',
         ["module-resolver", {
           "alias": {
+            "dva": "dva-react-router-3",
             "components": "./src/components",
             "config": "./src/config",
             "images": "./src/images",
@@ -39,7 +41,7 @@ export default {
             "utils": "./src/utils"
           }
         }],
-        ["import",{"libraryName":"antd","style":true}]
+          ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
       ],
       'autoprefixer': {
         'browsers': [
